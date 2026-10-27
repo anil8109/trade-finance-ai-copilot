@@ -1,0 +1,199 @@
+/* --- GLOBAL THEME --- */
+:root {
+  --primary-magenta: #d946ef;
+  --bg-gradient: linear-gradient(180deg, #6b21a8 0%, #d946ef 100%);
+  --dashboard-bg: #f8fafc;
+  --slate-dark: #1e293b;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--dashboard-bg);
+}
+
+/* --- 1. LOGIN --- */
+.login-screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-gradient);
+  z-index: 9999;
+}
+
+.login-card {
+  background: white;
+  width: 90%;
+  max-width: 400px;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.form-group {
+  width: 100%;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+.btn-login {
+  width: 100%;
+  padding: 14px;
+  background-color: var(--primary-magenta);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+/* --- 2. DASHBOARD --- */
+.hero {
+  background: var(--slate-dark);
+  color: white;
+  padding: 3rem 1rem 6rem;
+  text-align: center;
+}
+
+.header-controls {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.btn-logout {
+  background: rgba(255,255,255,0.1);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* --- GRID FIX: 30% Left, 70% Right --- */
+.workspace {
+  display: grid;
+  grid-template-columns: 0.3fr 0.7fr; 
+  gap: 25px;
+  max-width: 1400px;
+  margin: -4rem auto 3rem;
+  padding: 0 20px;
+  align-items: start;
+}
+
+.input-area, .output-area {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+  min-height: 550px;
+}
+
+.input-area textarea {
+  width: 100%;
+  height: 400px;
+  margin: 15px 0;
+  padding: 15px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-sizing: border-box;
+  resize: none;
+  font-family: inherit;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-rag, .btn-agent {
+  flex: 1;
+  padding: 14px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-rag { background: #3b82f6; }
+.btn-agent { background: #10b981; }
+
+/* --- RESULT STYLING & COLORS --- */
+.result-card {
+  border-top: 8px solid #cbd5e1;
+}
+
+/* Risk Backgrounds & Borders */
+.result-card.high-risk { border-top-color: #ef4444; background-color: #fffcfc; }
+.result-card.medium-risk { border-top-color: #f59e0b; background-color: #fffdfa; }
+.result-card.low-risk { border-top-color: #10b981; background-color: #fafffb; }
+
+.risk-banner {
+  padding: 12px;
+  text-align: center;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.risk-banner.HIGH { background: #fee2e2; color: #991b1b; }
+.risk-banner.MEDIUM { background: #fef3c7; color: #92400e; }
+.risk-banner.LOW { background: #dcfce7; color: #166534; }
+
+.empty-state-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #94a3b8;
+  border: 2px dashed #e2e8f0;
+  border-radius: 12px;
+  text-align: center;
+  padding: 40px;
+}
+
+.security-audit-box {
+  background: #f1f5f9;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.sanitized-text {
+  font-size: 0.8rem;
+  color: #64748b;
+  white-space: pre-wrap;
+}
+
+.content-box { margin-bottom: 25px; }
+.section-title { border-bottom: 2px solid #f1f5f9; padding-bottom: 8px; margin-bottom: 12px; }
+
+.discrepancy-list { list-style: none; padding: 0; }
+.discrepancy-list li { margin-bottom: 8px; color: #475569; }
+
+.policy-text-box {
+  background: #f8fafc;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
